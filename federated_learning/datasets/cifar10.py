@@ -10,6 +10,9 @@ from .dataset import Dataset
 logger.remove()
 logger.add("label_flipping_log.txt", format="{time} | {level} | {message}", level="DEBUG")
 
+# Add handler for terminal output (command prompt)
+logger.add(sys.stdout, format="{time} | {level} | {message}", level="DEBUG")
+
 class CIFAR10Dataset(Dataset):
 
     def __init__(self, args):
