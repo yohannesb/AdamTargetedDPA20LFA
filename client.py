@@ -35,6 +35,11 @@ class Client:
         #     eps=self.args.get_eps())  # Epsilon value
 
 
+        self.optimizer = optim.SGD(self.net.parameters(),
+            lr=self.args.get_learning_rate(),
+            momentum=self.args.get_momentum())
+
+
         self.optimizer = optim.RMSprop(self.net.parameters(),
             lr=self.args.get_learning_rate(),  # Learning rate
             alpha=0.99,  # Smoothing constant
