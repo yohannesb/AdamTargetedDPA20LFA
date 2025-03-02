@@ -40,12 +40,12 @@ class Client:
             momentum=self.args.get_momentum())
 
 
-        self.optimizer = optim.RMSprop(self.net.parameters(),
-            lr=self.args.get_learning_rate(),  # Learning rate
-            alpha=0.99,  # Smoothing constant
-            eps=self.args.get_eps(),  # Epsilon value
-            weight_decay=0,  # No weight decay (can be adjusted)
-            momentum=self.args.get_momentum())  # Momentum term
+        # self.optimizer = optim.RMSprop(self.net.parameters(),
+        #     lr=self.args.get_learning_rate(),  # Learning rate
+        #     alpha=0.99,  # Smoothing constant
+        #     eps=self.args.get_eps(),  # Epsilon value
+        #     weight_decay=0,  # No weight decay (can be adjusted)
+        #     momentum=self.args.get_momentum())  # Momentum term
         
         # Scheduler remains the same
         self.scheduler = MinCapableStepLR(self.args.get_logger(), self.optimizer,
