@@ -1,6 +1,7 @@
 import pickle
 import numpy as np
 import torch
+import sys
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 from loguru import logger
@@ -9,6 +10,9 @@ from .dataset import Dataset
 # Configure Logger
 logger.remove()
 logger.add("label_flipping_log.txt", format="{time} | {level} | {message}", level="DEBUG")
+
+# Add handler for terminal output (command prompt)
+logger.add(sys.stdout, format="{time} | {level} | {message}", level="DEBUG")
 
 class CIFAR10Dataset(Dataset):
 
@@ -48,7 +52,7 @@ class CIFAR10Dataset(Dataset):
         test_dataset = datasets.CIFAR10(root=self.get_args().get_data_path(), train=False, download=True, transform=transform)
 
         # Apply Label Flipping (if required for test set)
-        self.flip_labels(test_dataset)
+        #self.flip_labels(test_dataset)
 
         test_loader = DataLoader(test_dataset, batch_size=len(test_dataset))
 
