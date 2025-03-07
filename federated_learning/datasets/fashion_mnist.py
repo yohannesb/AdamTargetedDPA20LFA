@@ -137,7 +137,7 @@ class FashionMNISTDataset(Dataset):
         test_dataset = datasets.FashionMNIST(root=self.get_args().get_data_path(), train=False, download=True, transform=transform)
 
         # Apply Label Flipping (if required for test set)
-        self.flip_labels(test_dataset)
+        #self.flip_labels(test_dataset)
 
         test_loader = DataLoader(test_dataset, batch_size=len(test_dataset))
 
