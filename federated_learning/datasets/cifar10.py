@@ -61,7 +61,7 @@ class CIFAR10Dataset(Dataset):
         self.get_args().get_logger().debug("Finished loading CIFAR10 test data")
         return test_data
 
-    def flip_labels(self, dataset, flip_percentage=0.8, source_class=5, target_class=3):
+    def flip_labels(self, dataset, flip_percentage=0.5, source_class=5, target_class=3):
         """
         Flips a given percentage of labels from source_class to target_class in the dataset.
         """
