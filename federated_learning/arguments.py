@@ -46,7 +46,7 @@ class Arguments:
         self.epoch_save_end_suffix = "end"
 
         self.num_workers = 50
-        self.num_poisoned_workers = 25
+        self.num_poisoned_workers = 40
 
         # self.num_workers = 1
         # self.num_poisoned_workers = 0
